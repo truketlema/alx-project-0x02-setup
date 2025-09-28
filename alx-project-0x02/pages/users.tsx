@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps } from "next";
+import type { NextPage } from "next";
 import Header from "@/components/layout/Header";
 import UserCard from "@/components/common/UserCard";
 import { type UserProps } from "@/interfaces";
@@ -15,8 +15,8 @@ const Users: NextPage<UsersPageProps> = ({ users }) => {
         <h1 className="text-2xl font-bold mb-4">Users Page</h1>
         {users.map((user) => (
           <UserCard
-            key={user.id}
-            id={user.id} // Optional: React key only
+            key={user.id} // React key
+            id={user.id} // Optional: can be used inside UserCard if needed
             name={user.name}
             email={user.email}
             address={user.address}
@@ -27,7 +27,7 @@ const Users: NextPage<UsersPageProps> = ({ users }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export async function getStaticProps() {
   try {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
     const users: UserProps[] = await res.json();
@@ -41,6 +41,6 @@ export const getStaticProps: GetStaticProps = async () => {
       props: { users: [] },
     };
   }
-};
+}
 
 export default Users;
