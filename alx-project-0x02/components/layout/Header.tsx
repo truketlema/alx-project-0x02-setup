@@ -1,17 +1,18 @@
 import React from "react";
-import Link from "next/link"; // ✅ Make sure this line is present
+import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      <h1 className="text-xl font-bold">ALX Project 2</h1>
-      <nav>
-        {/* ✅ Navigation links */}
-        <Link href="/home" className="mr-4 hover:underline">
+    <header className="bg-gray-100 p-4 shadow-md">
+      <nav className="flex gap-4">
+        <Link href="/home" className="text-blue-600 hover:underline">
           Home
         </Link>
-        <Link href="/about" className="hover:underline">
+        <Link href="/about" className="text-blue-600 hover:underline">
           About
+        </Link>
+        <Link href="/posts" className="text-blue-600 hover:underline">
+          Posts
         </Link>
       </nav>
     </header>
