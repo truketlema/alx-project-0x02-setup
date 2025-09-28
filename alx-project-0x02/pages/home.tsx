@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Header from "../components/layout/Header";
-import Card from "../components/common/Card";
+import Card from "@/components/common/Card";
 
 const Home: NextPage = () => {
   return (
