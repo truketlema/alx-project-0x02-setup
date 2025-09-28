@@ -14,3 +14,11 @@ export interface ButtonProps {
   shape: "rounded-sm" | "rounded-md" | "rounded-full";
   children: React.ReactNode;
 }
+// ✅ PostProps interface
+// interfaces/index.ts
+export interface PostProps {
+  id: number; // add this line
+  userId: number;
+  title: string;
+  body: string;
+}
